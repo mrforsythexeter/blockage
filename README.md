@@ -27,5 +27,21 @@ And this will produce the following
 
 ![Example Image From Firefox onbeforeunload Event](https://github.com/mrforsythexeter/blockage/raw/master/readme_assets/example.png)
 
+If your check code doesn't require to stop the page unload event then simply return false, for example
+
+```javascript
+var allDataSaved = false;
+
+/* Snip you code to change the above var to true, if the data is saved */
+
+blockage.addCheck(function(){
+	if (allDataSaved === true){
+		return false;
+	}else{
+		return 'Did you forget something?';
+	}
+});
+````
+
 ## Future
 I will look to clean this up and make it work across browser if people start using it.
